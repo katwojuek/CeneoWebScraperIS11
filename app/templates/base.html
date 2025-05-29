@@ -10,29 +10,27 @@
     <title>Ceneo Web Scraper</title>
 </head>
 <body>
-    <header class="container sticky-top text-center">
-        <h1>Ceneo Web Scraper</h1>
-        <h2>{% block title %} {% endblock %}</h2>
+    <header class="container sticky-top text-center navbar bg-body-tertiary">
+        <h1 class="ms-3">Ceneo Web Scraper</h1>
+        <h2 class="me-3">{% block title %} {% endblock %}</h2>
     </header>
-    <section class="container">
+    <section class="container mt-3 mb-3 pt-3 pb-3">
         <div class="row">
-            <div class="col-3">
-                <ul>
-                    <li><a href="{{url_for('index')}}">Strona główna</a></li>
-                    <li><a href="{{url_for('display_form')}}">Ekstrakcja opinii</a></li>
-                    <li><a href="{{url_for('products')}}">Lista produktów</a></li>
-                    <li><a href="{{url_for('author')}}">O autorze</a></li>
-                </ul>
+            <div class="col-2 list-group">
+                <a class="list-group-item list-group-item-action" href="{{url_for('index')}}"><i class="bi bi-house-fill"></i> Strona główna</a>
+                <a class="list-group-item list-group-item-action" href="{{url_for('display_form')}}"><i class="bi bi-cloud-download-fill"></i> Ekstrakcja opinii</a>
+                <a class="list-group-item list-group-item-action" href="{{url_for('products')}}"><i class="bi bi-list-stars"></i> Lista produktów</a>
+                <a class="list-group-item list-group-item-action" href="{{url_for('author')}}"><i class="bi bi-person-fill"></i> O autorze</a>
             </div>
-            <div class="col-9">
+            <div class="col-10">
             {% block content %}
 
             {% endblock %}
             </div>
         </div>
     </section>
-    <footer class="container sticky-bottom text-center">
-        <p>Katarzyna Wójcik, Uniwersytet Ekonomiczny w Krakowie</p>
+    <footer class="container sticky-bottom navbar bg-body-tertiary justify-content-center">
+        <p class="mt-1 mb-1">Katarzyna Wójcik, Uniwersytet Ekonomiczny w Krakowie</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

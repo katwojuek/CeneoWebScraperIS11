@@ -68,5 +68,8 @@ def author():
 @app.route("/product/<product_id>")
 def product(product_id):
     product_name=request.args.get('product_name')
-    opinions = pd.read_json(f"./app/data/opinions/{product_id}.json")
-    return render_template("product.html", product_id=product_id, product_name=product_name, opinions=opinions.to_html(table_id='opinions', classes=['display']))
+    with open(f"./app/data/opinions/{product_id}.json", "r", encoding="UTF-8") as jf:
+        opinions = json.load(jf)
+    return render_template("product.html", product_id=product_id, product_name=product_name, opinions=opinions) 
+    # opinions = pd.read_json(f"./app/data/opinions/{product_id}.json")
+    # return render_template("product.html", product_id=product_id, product_name=product_name, opinions=opinions.to_html(table_id='opinions', classes=['display table table-striped table-hover']))
